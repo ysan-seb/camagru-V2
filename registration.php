@@ -1,5 +1,5 @@
 <div id="registrationMod" name="registrationMod" onclick="hiddenRegistrationMod(this)">
-    <form class="registrationForm" method="POST" onclick="hiddenRegistrationMod(this)">
+    <form class="registrationForm" action="phpAction/account_create.php" method="POST" onclick="hiddenRegistrationMod(this)">
         <i onclick="hiddenRegistrationForm()">✕</i>
         <div class="titleForm"><a>Register</a></div>
         <input type="text" name="username" placeholder="Username" required>

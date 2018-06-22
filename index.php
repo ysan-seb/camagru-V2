@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $_SESSION['authenticated'] = 'false';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,7 +14,7 @@
 <body>
     <?php
         include('navbar.php');        
-        if ($_SESSION['authenticated'] === 'false') {
+        if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] === 'false') {
             include('login.php');
             include('registration.php');
             include('forgotPassword.php');

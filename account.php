@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $_SESSION['authenticated'] = 'false';
 ?>
 <!DOCTYPE html>
 <html lang="fr">

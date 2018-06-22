@@ -10,7 +10,7 @@
             <a href="capture.php">CAPTURE</a>
         </li>
         <?php
-        if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === 'false') {
+        if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] === 'false') {
             echo('
         <li>
             <a onclick="showRegistration()">REGISTER</a>
