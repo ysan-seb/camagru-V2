@@ -498,3 +498,21 @@ input[type=button] {
 input[type=button]:hover {
     background-color: #3B7DB5;
 }
+
+.unauthorized {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    margin: -200px 0 0 -200px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.code {
+    color: #34495e;
+    font-size: 100px;
+    margin: 30px 0 0 0;
+}

@@ -1,5 +1,5 @@
 <div id="loginMod" name="loginMod" onclick="hiddenLoginMod(this)">
-    <form class="loginForm" action="phpAction/account_connect.php" method="POST" onclick="hiddenLoginMod(this)">
+    <form class="loginForm" action="php/account_connect.php" method="POST" onclick="hiddenLoginMod(this)">
         <i onclick="hiddenLoginForm()">✕</i>
         <div class="titleForm"><a>Login</a></div>
         <input type="text" name="username" placeholder="Username" required>
