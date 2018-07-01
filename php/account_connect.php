@@ -23,12 +23,22 @@ try{
 catch(PDOException $Exception){
 	echo "Error during the taking table :\n" . $Exception->getMessage() . "\n";
 }
+
+function getEmail($db, $username) {
+	foreach ($db as $data) {
+		if ($data['username'] === $username) {
+			return ($data['email']);
+		}
+	}
+}
+
 if (!empty($_POST['username']) && !empty($_POST['password']))
 {
 	if (authentification($db, $_POST['username'], $_POST['password']))
 	{
 		$_SESSION['authenticated'] = 'YES';
-		$_SESSION['username'] = $_POST['username'];
+		$_SESSION['username'] = htmlspecialchars($_POST['username']);
+		$_SESSION['email'] = getEmail($db, $_SESSION['username']);
 		header('location: ../gallery.php');
 	}
 	else

@@ -24,24 +24,23 @@ function    getUserIdByUsername($db, $username, $password){
 }
 
 $username = $_SESSION['username'];
-$newUsername = htmlspecialchars($_POST['newUsername']);
 $password = hash('Whirlpool', $_POST['password']);
-$userId = getUserId($db, $username, $password);
+$userId = getUserIdByUsername($db, $username, $password);
 if ($userId > 0) {
 // A secure !!! 
 // A secure !!! 
 // A secure !!! 
 // A secure !!! 
     if (isset($_POST['newUsername']) && isset($_POST['password'])) {
-        $username = $_SESSION['username'];        
-        $password = hash('Whirlpool', $_POST['password']);
-        $email = $_POST['newEmail'];        
+        $username = $_SESSION['username'];
+        $newUsername = htmlspecialchars($_POST['newUsername']);        
+        $password = hash('Whirlpool', $_POST['password']);     
         $userId = getUserIdByUsername($db, $username, $password);
 
         try{
         $pdo = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $request = "UPDATE `users` SET `username` = '$newUsername' WHERE `id` = 1;";
+        $request = "UPDATE `users` SET `username` = '$newUsername' WHERE `id` = $userId;";
         $req = $pdo->prepare($request);
         $req->execute();
         $req->closeCursor();

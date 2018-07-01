@@ -25,7 +25,7 @@ function    getUserIdByUsername($db, $username, $password){
 
 $username = $_SESSION['username'];        
 $password = hash('Whirlpool', $_POST['password']);
-$userId = getUserId($db, $username, $password);
+$userId = getUserIdByUsername($db, $username, $password);
 if ($userId > 0) {
 // A secure !!! 
 // A secure !!! 
@@ -40,10 +40,11 @@ if ($userId > 0) {
         try{
         $pdo = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $request = "UPDATE `users` SET `email` = '$email' WHERE `id` = 1;";
+        $request = "UPDATE `users` SET `email` = '$email' WHERE `id` = $userId;";
         $req = $pdo->prepare($request);
         $req->execute();
-        $req->closeCursor();    
+        $req->closeCursor();
+        $_SESSION['email'] = $email;        
         header('location: ../account.php');
         exit(); 
         } catch(PDOException $Exception){

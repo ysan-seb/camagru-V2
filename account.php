@@ -33,14 +33,14 @@
                     <div class="titleForm">Account</div>
                     <div class="accountProp">
                         <a style="float:left">Notifications</a>
-                        <input style="float:right" type="button" onclick="showNotification()" value="Change">
+                        <input style="float:right" type="button" onclick="showNotification()" value="Manage">
                     </div>
                     <div class="accountProp">
-                        <a style="float:left">Username</a>
+                        <a style="float:left">' . $_SESSION['username'] . '</a>
                         <input style="float:right" type="button" onclick="showUsername()" value="Change">
                     </div>
                     <div class="accountProp">
-                        <a style="float:left">Email</a>
+                        <a style="float:left">' . $_SESSION['email'] . '</a>
                         <input style="float:right" type="button" onclick="showEmail()" value="Change">
                     </div>
                     <div class="accountProp">
