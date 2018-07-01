@@ -28,6 +28,7 @@ if (!empty($_POST['username']) && !empty($_POST['password']))
 	if (authentification($db, $_POST['username'], $_POST['password']))
 	{
 		$_SESSION['authenticated'] = 'YES';
+		$_SESSION['username'] = $_POST['username'];
 		header('location: ../gallery.php');
 	}
 	else

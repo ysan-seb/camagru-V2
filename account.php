@@ -32,19 +32,19 @@
                 <div class="accountForm">
                     <div class="titleForm">Account</div>
                     <div class="accountProp">
-                        <a style="float:left">Notification setting</a>
+                        <a style="float:left">Notifications</a>
                         <input style="float:right" type="button" onclick="showNotification()" value="Change">
                     </div>
                     <div class="accountProp">
-                        <a style="float:left">Username setting</a>
+                        <a style="float:left">Username</a>
                         <input style="float:right" type="button" onclick="showUsername()" value="Change">
                     </div>
                     <div class="accountProp">
-                        <a style="float:left">Email setting</a>
+                        <a style="float:left">Email</a>
                         <input style="float:right" type="button" onclick="showEmail()" value="Change">
                     </div>
                     <div class="accountProp">
-                        <a style="float:left">Password setting</a>
+                        <a style="float:left">Password</a>
                         <input style="float:right" type="button" onclick="showPassword()" value="Change">
                     </div>
                 </div>
